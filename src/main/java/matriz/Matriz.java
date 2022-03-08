@@ -45,13 +45,12 @@ public class Matriz {
     }
 
     public static void recorrerFila(int fila, int[][] matriz) {
-        if (fila>= 0 && fila <= matriz.length) {
+        if (fila >= 0 && fila <= matriz.length) {
             for (int i = 0; i < matriz.length; i++) {
                 System.out.println(matriz[fila][i]);
             }
         }
     }
-    
 
     public static void recorrerColumna(int columna, int[][] matriz) {
         if (columna >= 0 && columna <= matriz[0].length) {
@@ -60,7 +59,6 @@ public class Matriz {
             }
         }
     }
-    
 
     public static void recorrerVecinos(int fila, int columna, int[][] matriz) {
         if (fila >= 0 && fila < matriz.length && columna >= 0 && columna < matriz[0].length) {
@@ -75,6 +73,26 @@ public class Matriz {
                     }
                 }
 
+            }
+        }
+    }
+
+    public static void recorrerDiagonalIzdToDr(int[][] matriz) {
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[i].length; j++) {
+                if (i == j) {
+                    System.out.println(matriz[i][j]);
+                }
+            }
+        }
+    }
+
+    public static void recorrerDiagonalDrToIzq(int[][] matriz) {
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[i].length; j++) {
+                if (i + j == matriz.length - 1) {
+                    System.out.println(matriz[i][j]);
+                }
             }
         }
     }
