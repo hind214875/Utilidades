@@ -12,7 +12,8 @@ import java.util.Random;
  * @author hinda
  */
 public class Matriz {
-     //metodos
+    //metodos
+
     public static void rellenarMatrix(int[][] matrix) {
         Random rd = new Random();
         for (int i = 0; i < matrix.length; i++) {
@@ -42,20 +43,40 @@ public class Matriz {
         }
         return media = sum / contador;
     }
-    
-     public static void recorrerFila(int x, int[][] matriz) {
-        if (x >= 0 && x <= matriz.length) {
+
+    public static void recorrerFila(int fila, int[][] matriz) {
+        if (fila>= 0 && fila <= matriz.length) {
             for (int i = 0; i < matriz.length; i++) {
-                System.out.println(matriz[x][i]);
+                System.out.println(matriz[fila][i]);
+            }
+        }
+    }
+    
+
+    public static void recorrerColumna(int columna, int[][] matriz) {
+        if (columna >= 0 && columna <= matriz[0].length) {
+            for (int i = 0; i < matriz.length; i++) {
+                System.out.println(matriz[i][columna]);
+            }
+        }
+    }
+    
+
+    public static void recorrerVecinos(int fila, int columna, int[][] matriz) {
+        if (fila >= 0 && fila < matriz.length && columna >= 0 && columna < matriz[0].length) {
+            for (int i = fila - 1; i <= fila + 1; i++) {
+                if (i >= 0 && i < matriz.length) {
+                    for (int j = columna - 1; j <= columna + 1; j++) {
+                        if ((j >= 0 && j < matriz[i].length) && (!(fila == i && columna == j))) {
+                            //if (!(fila==i&&columna==j)){
+                            System.out.println(matriz[i][j]);
+                            //}
+                        }
+                    }
+                }
+
             }
         }
     }
 
-    public static void recorrerColumna(int x, int[][] matriz) {
-        if (x >= 0 && x <= matriz.length) {
-            for (int i = 0; i < matriz.length; i++) {
-                System.out.println(matriz[i][x]);
-            }
-        }
-    }
 }
