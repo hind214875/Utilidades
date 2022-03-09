@@ -69,4 +69,19 @@ public class Array {
         return Arrays.equals(cadena1, cadena2);
     }
 
+    private static void IntialArrayConAleatorios(int[] array) {
+        Random rd = new Random();
+        //inicial el array con aleatorios
+        for (int i = 0; i < array.length; i++) {
+            array[i] = rd.nextInt(100 - 10 + 1) + 10; //enteroRango(1, 10);     
+        }
+        /* OR: fill all the array con aleatorios */
+           // Arrays.fill(array,rd.nextInt(100 - 10 + 1) + 10);
+    }
+    
+     public void MostrarResultado(boolean[] array){
+         for(int i=0;i<array.length ; i++){
+             System.out.println(" NumeroLanzamiento: "+i+"  "+(array[i]? "cara":"cruz")+"\n");
+         }
+     }
 }
