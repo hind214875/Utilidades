@@ -77,7 +77,6 @@ public class Aleatorios {
 
         // De la misma forma se pueden crear números long, con el método
         // random.longs, y números double, con random.doubles
-        
         // Para generar letras minúsculas
         // Se genera un número entre 0 y 25 (número de letras de a hasta z)
         // y luego se añade la letra incial del rango, en este caso 'a'
@@ -97,7 +96,15 @@ public class Aleatorios {
         // indice
         char letra = LETRAS.charAt(indiceLetraSacar);
         System.out.println("Letra sacada: " + letra);
+        
+        //enum aleatorio
+   /* public static Premio generarPremioAleatorio() {
+        Random rd = new Random();
+        Premio[] values = Premio.values();
+        int size = values.length;
+        return values[rd.nextInt(size)];*/
 
     }
 
 }
+
