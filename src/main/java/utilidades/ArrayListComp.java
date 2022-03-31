@@ -42,6 +42,17 @@ public class ArrayListComp {
     public int buscarISBN(String l) {
         return Collections.binarySearch(lista, l);
     }
+    
+    /*  public static int busquidaBinaria(ArrayList<Robot> list,int numeroSerie){
+           Robot r=new Robot("eret",0);
+           return Collections.binarySearch(list, r,(Robot r1,Robot r2)->(r1.getNumeroSerie().compareTo(r2.getNumeroSerie())));
+    }
+    
+    //busquida binaria de robot
+      public static int busquidaBinariaRobot(ArrayList<Robot> list,Robot r){
+           return Collections.binarySearch(list, r,(Robot r1,Robot r2)->(r1.getNumeroSerie().compareTo( r2.getNumeroSerie())));
+    }*/
+      
     //busqueda binaria por nombre
      //lista debe estar ordenada segun el criterio que se pasa a este busqueda
     /* public int buscarBinariaNombre(Libro l){
@@ -133,5 +144,7 @@ public class ArrayListComp {
         }
         return copia;
     }
+    
+    
      
 }
