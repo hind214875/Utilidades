@@ -5,6 +5,9 @@
  */
 package utilidades;
 
+import java.time.LocalDate;
+import java.time.Month;
+import java.time.temporal.ChronoUnit;
 import java.util.Random;
 
 /**
@@ -105,6 +108,18 @@ public class Aleatorios {
         return values[rd.nextInt(size)];*/
 
     }
+    
+    /* Localdate Aleatorio*/
+      public static LocalDate randomLocalDate() {
+        Random rd=new Random();
+        LocalDate start = LocalDate.now();
+        
+        long days = ChronoUnit.DAYS.between(start, LocalDate.of(2032, Month.MARCH, 24));
+        LocalDate randomDate = start.plusDays(rd.nextInt((int) days + 1));
+        return randomDate;
+    }
+    
+     // RandomStringUtils.randomAlphabetic(20).toLowerCase()
 
 }
 
