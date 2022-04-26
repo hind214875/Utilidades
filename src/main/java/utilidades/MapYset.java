@@ -40,6 +40,12 @@ public class MapYset {
         }
     }
     
+    //recorrer el map and get values and keys
+   /* for (Map.Entry<String, Integer> entry : nameMap.entrySet()) {
+                   flujo.write(entry.getKey()+"\t"+entry.getValue());
+                   
+     }*/
+    
     //mostrar set 
     public void mostrarSet(){
       listSet.forEach(System.out::println);
