@@ -376,6 +376,18 @@ public class Ejercicio_matrices {
             }
 
         }
+        
+        /*
+           public boolean recorrerVertical(){
+        boolean premioColumna=false;
+        for (int i = 0; i < carton.length; i++) {
+           if(carton[i].equals(marcarCarta(0,i))){
+             return true;
+           }
+        }
+        return premioColumna;
+    }
+        */
 
         //Si no hay ganador, devuelvo el simbolo por defecto
         return simboloDef;
