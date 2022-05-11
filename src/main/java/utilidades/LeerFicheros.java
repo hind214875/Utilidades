@@ -19,8 +19,12 @@ import java.util.Scanner;
  * @author hinda
  */
 public class LeerFicheros {
+    //   Cuando leemos fechas en un csv, tenemos que formaterarlas
+    //   DateTimeFormatter fecha = DateTimeFormatter.ofPattern("d/MM/yyyy");
+    //   LocalDate.parse(fechaX,formatter));
+    
 
-    //Metodo generico para leer cualquier archivo csv, recibe el nombre del archivo y el separador de campos ";",","...
+    //Metodo generico para leer cualquier archivo csv, recibe el nombre del archivo 
     public static <T> List<T> leerFicheroCsv(String idFichero) {
 
         // Variables para guardar los datos que se van leyendo

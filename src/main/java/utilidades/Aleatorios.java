@@ -120,6 +120,8 @@ public class Aleatorios {
     }
     
      // RandomStringUtils.randomAlphabetic(20).toLowerCase()
+    //https://github.com/jfervic933/fechasHorasJava8/blob/master/FechasJava8.java
+     // https://freecodegenerators.com/code-converters/json-to-pojo
 
 }
 

@@ -20,15 +20,17 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 /**
  *
  * @author hinda
  */
 public class EscribirFicheros {
-        //Metodo para escribir un cvs con un array de cualquier tipo de objetos
+    //Metodo para escribir un cvs con un array de cualquier tipo de objetos
     //---Asegurarse de tener implentado el toString con formato "x;x;...", en otro caso modificar este mismo metodo con los datos pertinentes--
-      public static <T> void escrituraFicheroCsv(String idFichero, ArrayList<T> lista) {
+
+    public static <T> void escrituraFicheroCsv(String idFichero, ArrayList<T> lista) {
 
         try (BufferedWriter flujo = new BufferedWriter(new FileWriter(idFichero))) {
             //debende que quieres hacer 
@@ -44,8 +46,8 @@ public class EscribirFicheros {
             System.out.println(e.getMessage());
         }
     }
-      
-     //Metodo para escribir un cvs con un objeto cualquiera
+
+    //Metodo para escribir un cvs con un objeto cualquiera
     public static <T> void escribirCsv(String nombre, T objeto) {
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(nombre))) {
             //TODO: modificar segun sea conveniente
@@ -55,8 +57,22 @@ public class EscribirFicheros {
             throw new RuntimeException(e);
         }
     }
-    
-     //Metodo para escribir un json con un array de cualquier tipo de objetos
+
+    //escribir un csv desde una mapa que paso como parametro
+    private static <T> void escribirCsv(String nombre, Map<T, T> datos) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(nombre))) {
+            for (Map.Entry<T, T> entry : datos.entrySet()) {
+                bw.write(entry.getKey() + "\t" + entry.getValue());
+                bw.newLine();
+            }
+
+            bw.flush();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    //Metodo para escribir un json con un array de cualquier tipo de objetos
     //---Asegurar de tener correctamente las dependecias--
     //<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
     //<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.datatype/jackson-datatype-jsr310 --> (por si hay fechas)
@@ -73,8 +89,7 @@ public class EscribirFicheros {
             System.out.println(e.getMessage());
         }
     }
-    
-    
+
     //crear directorio
     //Ej: si pones una ruta "./ej1/ejercicios" te crea dos carpetas
     //Ej: si has creado anteriormente "./ej1" y pones "./ej1/ejemplo" te crea dentro de ej1 un carpeta llamada ejemplo
@@ -93,7 +108,7 @@ public class EscribirFicheros {
             System.out.println(e.toString());
         }
     }
-    
+
     public static void copiarFicherosEnDirectorio(String rutaOrigen, String rutaDestino) {
         Path origen = Paths.get(rutaOrigen);
         Path destino = Paths.get(rutaDestino);
@@ -107,9 +122,5 @@ public class EscribirFicheros {
             System.out.println(ex.getMessage());
         }
     }
-    
-    
-    
-  
-      
+
 }
